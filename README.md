@@ -24,7 +24,6 @@ Descrever o mini-mundo! (Não deve ser maior do que 30 linhas) <br>
 
 Link para o resto do rascunho:
 
-![Alt text](https://github.com/BCLL-CantinaIFES/trab01/blob/master/fotoBalsa.png)
 
 #### 4.1 TABELA DE DADOS DO SISTEMA:
     Esta tabela deve conter todos os atributos do sistema e um mínimo de 10 linhas.
@@ -35,7 +34,7 @@ Link para o resto do rascunho:
 
 ### 5.MODELO CONCEITUAL<br>
     A) NOTACAO ENTIDADE RELACIONAMENTO
-//![Alt text](https://github.com/pauloricardo50/Trabalho-Banco-de-Dados-II/blob/master/Conceitual_1.png?raw=true)
+//![Alt text](https://github.com/pauloricardo50/Trabalho-Banco-de-Dados-II/blob/master/Modelo%20Conceitual.png?raw=true)
     
     B) NOTACAO UML (Caso esteja fazendo a disciplina de analise)
     C) QUALIDADE 
