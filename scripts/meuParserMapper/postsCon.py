@@ -1,5 +1,6 @@
 import psycopg2
 
+
 class pgConnection:
     def __init__(self, user="postgres" ,password="123456", host="127.0.0.1",port="5432", database="Trabalho1"):
         self.user = user
@@ -9,7 +10,7 @@ class pgConnection:
         self.database = database
         self.connection = None
         self.cursor = None
-
+        self.connect()
 
     def connect(self):
         if self.user is not '':
@@ -26,22 +27,27 @@ class pgConnection:
                 self.cursor.execute("SELECT version();")
                 record = self.cursor.fetchone()
                 print("Você está conectado a - ", record,"\n")
+
             except (Exception, psycopg2.Error) as error :
                 print ("Erro ao conectar com o PostgreSQL", error)
-            finally:
+
+            '''finally:
                 #closing database connection.
                     if(self.connection is not None):
                         self.cursor.close()
                         self.connection.close()
-                        print("Conexão com PostgreSQL fechada!")
+                        print("Conexão com PostgreSQL fechada!")'''
         else:
             print("Usuário não definido!")
 
+    def sqlExec(self, sql:str):
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+            return True
 
-
-
-def main():
-    conn = pgConnection()
-    conn.connect()
-
-main()
+        except Exception as Exp:
+            print("Ocorreu um erro ao executar a transação!", Exp)
+            self.cursor.close()
+            self.connection.close()
+            return False
