@@ -51,3 +51,4 @@ class pgConnection:
             self.cursor.close()
             self.connection.close()
             return False
+
