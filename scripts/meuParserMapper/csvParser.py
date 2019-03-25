@@ -1,6 +1,5 @@
 import postsCon
 
-
 class myColumnFormat:
     def __init__(self, format:str):
         self.createFormat = format.strip(' ')
