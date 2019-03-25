@@ -1,4 +1,3 @@
-import datetime
 import postsCon
 
 
@@ -34,8 +33,6 @@ class myParser:
             with open('header.txt', 'w') as file:
                 file.write(headerStr)
 
-
-
     def csvCreationProtocol(self, csvPath, columnFormat:myColumnFormat, tableName):
         sql = '''CREATE TABLE '''+tableName+'''('''+columnFormat.createFormat+''');'''
         print(sql)
@@ -61,9 +58,7 @@ class myParser:
 
                 # lstAux[19] = lstAux[19].replace(',', '.')
                 lstAux[52] = lstAux[52].replace(',', '.').replace('\n', '')
-
                 lstAux = tuple(lstAux)
-
                 sql = '''INSERT INTO '''+tableName+''' ('''+columnFormat.tupleFormat+''') VALUES '''+str(tuple(lstAux))+''';'''
 
                 if self.conn.sqlExec(sql) is False:
@@ -86,8 +81,6 @@ class myParser:
             lst[29] = value
             del (lst[29:31])
             print('String corrigida: ', lst[29])
-
-
         # print('concatValues - len(lst):', len(lst))
         # if len(lst) == 23:
         #     value = str(lst[17]) + str(lst[18])
@@ -126,7 +119,6 @@ def main():
              'vr_despesa FLOAT, ' \
              'tipo_despesa VARCHAR(400), ' \
              'descricao_despesa VARCHAR(400)'
-
 
     header2018 = 'DT_GERACAO DATE,' \
                  'HH_GERACAO TIME,' \
@@ -193,13 +185,4 @@ def main():
     # table.getHeader("C:/Users/Hugo/Desktop/BD2/despesas_contratadas_candidatos_2018_BRASIL.csv")
     table.csvCreationProtocol("C:/Users/Hugo/Desktop/BD2/despesas_contratadas_candidatos_2018_BRASIL.csv", columnFormat, tableName)
 
-
-
-
 main()
-
-
-
-
-
-
