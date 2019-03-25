@@ -31,12 +31,13 @@ class pgConnection:
             except (Exception, psycopg2.Error) as error :
                 print ("Erro ao conectar com o PostgreSQL", error)
 
-            '''finally:
+            finally:
                 #closing database connection.
-                    if(self.connection is not None):
-                        self.cursor.close()
-                        self.connection.close()
-                        print("Conexão com PostgreSQL fechada!")'''
+                if(self.connection is not None):
+                    self.cursor.close()
+                    self.connection.close()
+                    print("Conexão com PostgreSQL fechada!")
+                    
         else:
             print("Usuário não definido!")
 
