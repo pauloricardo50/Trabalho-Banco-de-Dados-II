@@ -10,9 +10,9 @@ class pgConnection:
         self.database = database
         self.connection = None
         self.cursor = None
-        self.connect()
+        self.__connect__()
 
-    def connect(self):
+    def __connect__(self):
         if self.user is not '':
             try:
                 self.connection = psycopg2.connect(user = self.user,
@@ -21,9 +21,9 @@ class pgConnection:
                                               port = self.port,
                                               database = self.database)
                 self.cursor = self.connection.cursor()
-                # Print PostgreSQL Connection properties
+
+                # print dos parâmetros de conexão e versão do postgres:
                 print ( self.connection.get_dsn_parameters(),"\n")
-                # Print PostgreSQL version
                 self.cursor.execute("SELECT version();")
                 record = self.cursor.fetchone()
                 print("Você está conectado a - ", record,"\n")
@@ -37,7 +37,7 @@ class pgConnection:
                     self.cursor.close()
                     self.connection.close()
                     print("Conexão com PostgreSQL fechada!")
-                    
+
         else:
             print("Usuário não definido!")
 
