@@ -1,6 +1,6 @@
 # TRABALHO 01: PRESTAÇÃO DE CONTAS ELEITORAIS
 Trabalho com objetivo de facilitar a visualização dos dados referentes a prestação de conta dos gastos em campanhas eleitorais.
-(Usando como base as de 2014 e 2018)
+(Usando como base as de 2014)
 
 # Sumário
 
